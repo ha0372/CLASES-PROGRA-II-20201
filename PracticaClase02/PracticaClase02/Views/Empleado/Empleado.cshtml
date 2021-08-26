@@ -17,7 +17,22 @@
         Nombre
     </th>
     <th>
+        Apellido
+    </th>
+    <th>
+        DUI
+    </th>
+    <th>
         Dirrecion
+    </th>
+    <th>
+        Telefono
+    </th>
+    <th>
+        Correo
+    </th>
+    <th>
+        Cargo
     </th>
     <th>
         Eliminacion
@@ -27,14 +42,25 @@
 
         @foreach (var item in Model)/*Model variable especial de asp proviene de arriva y automaticamente hace una inyeccipon desde el persona controler*/
         {
-            <tr>
-                <td>@item.id_empleado</td>
-                <td>@item.Empl_nombre</td>
-                <td>@item.Empl_direccion</td>
-                <td>@Html.ActionLink("Eliminar", "Delete", new { id = item.id_empleado }, new { @class = "btn btn-danger" })</td>
-            </tr>
+        <tr>
+            <td>@item.id_empleado</td>
+            <td>@item.Empl_nombre</td>
+            <td>@item.Empl_apellido</td>
+            <td>@item.Empl_DUI</td>
+            <td>@item.Empl_direccion</td>
+            <td>@item.Empl_tel</td>
+            <td>@item.Empl_email</td>
+            <td>@item.Empl_cargo</td>
+
+            <td>
+                @Html.ActionLink("Editar", "EmpleadoSave", new { id = item.id_empleado, nombre = item.Empl_nombre, apellido = item.Empl_apellido, dui = item.Empl_DUI, direccion = item.Empl_direccion, telefono = item.Empl_tel, correo = item.Empl_email, cargo = item.Empl_cargo }, new { @class = "btn btn-success" })
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.id_empleado }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
         }
 
 
     </tbody>
 </table>
+
+@Html.ActionLink("Guardado", "EmpleadoSave", new { @class = "btn btn-success" })
