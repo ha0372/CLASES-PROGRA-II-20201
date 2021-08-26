@@ -1,0 +1,40 @@
+﻿@model List<PracticaClase02.Models.inventario> /*es para hacer uso de lo datos de la tabla empleado*/
+@{
+    ViewBag.Title = "Empleado";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Empleado</h2>
+
+
+
+<table class="table table-striped">
+    <thead>
+    <th>
+        ID
+    </th>
+    <th>
+        Nombre
+    </th>
+    <th>
+        Dirrecion
+    </th>
+    <th>
+        Eliminacion
+    </th>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)/*Model variable especial de asp proviene de arriva y automaticamente hace una inyeccipon desde el persona controler*/
+        {
+            <tr>
+                <td>@item.id_empleado</td>
+                <td>@item.Empl_nombre</td>
+                <td>@item.Empl_direccion</td>
+                <td>@Html.ActionLink("Eliminar", "Delete", new { id = item.id_empleado }, new { @class = "btn btn-danger" })</td>
+            </tr>
+        }
+
+
+    </tbody>
+</table>

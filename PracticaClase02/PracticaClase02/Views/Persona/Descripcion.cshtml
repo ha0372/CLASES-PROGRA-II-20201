@@ -1,0 +1,44 @@
+﻿@model List<PracticaClase02.Models.ClsPersona> /*asp hara una inyeccion y la inyeccion se recupera aca con un foreach*/
+@{
+    ViewBag.Title = "Descripcion";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    //var variable = "Amilcar";
+}
+
+@using (Html.BeginForm("Descripcion", "Persona")) /*nos va ayudar hacer que el servidor vamos a iniciar un formulario y vamos a mandar parametro0s y variables hacia el backend */
+{
+   <label> Agrega tu nombre</label>
+   <input type="text" name="variable"/>
+
+   <input type="submit" />
+
+}
+  
+<h1>@ViewBag.variableDinamica</h1>
+
+<table class="table table-striped">
+    <thead>
+    <th>
+        ID
+    </th>
+    <th>
+        Nombre
+    </th>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)/*Model variable especial de asp proviene de arriva y automaticamente hace una inyeccipon desde el persona controler*/
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Nombre</td>
+            </tr>
+        }
+
+
+    </tbody>
+</table>
+
+
+
