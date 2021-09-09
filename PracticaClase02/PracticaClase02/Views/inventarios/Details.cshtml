@@ -1,0 +1,75 @@
+﻿@model PracticaClase02.Models.inventario
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>inventario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Empl_nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empl_nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Empl_apellido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empl_apellido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Empl_DUI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empl_DUI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Empl_direccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empl_direccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Empl_tel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empl_tel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Empl_email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empl_email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Empl_cargo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empl_cargo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_empleado }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
