@@ -36,6 +36,7 @@ namespace PracticaClase02.Controllers
         }
 
 
+
         //[HttpPost]
         //public ActionResult Save(string nombre, string apellido, string dui, string direccion, string telefono, string correo, string cargo)
         //{
@@ -56,6 +57,44 @@ namespace PracticaClase02.Controllers
 
         //    return Redirect("/Empleado/Empleado");
         //}
+        /*********************************************************************************************************************************************************/
+
+        public ActionResult EmpleadoSave(string nombre, string apellido, string dui, string direccion, string telefono, string correo, string cargo, int id = 0)
+        {
+            ViewBag.id = id;
+            ViewBag.nombre = nombre;
+            ViewBag.apellido = apellido;
+            ViewBag.dui = dui;
+            ViewBag.direccion = direccion;
+            ViewBag.telefono = telefono;
+            ViewBag.correo = correo;
+            ViewBag.cargo = cargo;
+
+
+            //= id;
+
+            return View("EmpleadoSave");
+        }
+
+        //[HttpPost]
+        //public ActionResult EmpleadoSave(String id)
+        //{
+        //    inventario empleado = new inventario();
+
+        //    using (EMPLEADOSEntities Empleado = new EMPLEADOSEntities())
+        //    {
+
+        //        int update = Convert.ToInt32(id);
+
+        //        inventario cargarDatos = Empleado.inventario.Where(x => x.id_empleado == update).FirstOrDefault();
+
+        //        return View(cargarDatos);
+        //    }
+
+
+        //}
+
+        /*********************************************************************************************************************************************************/
         [HttpPost]
         public ActionResult Save(TblEmpleadoViewModel epl/*int id, string nombre, string apellido, string dui, string direccion, string telefono, string correo, string cargo*/)
         {
@@ -93,42 +132,6 @@ namespace PracticaClase02.Controllers
             }
 
             return Redirect("/Empleado/Empleado");
-        }
-
-        //[HttpPost]
-        //public ActionResult EmpleadoSave(string nombre, string apellido, string dui, string direccion, string telefono, string correo, string cargo, int id= 0)
-        //{
-        //    ViewBag.id = id;
-        //    ViewBag.nombre = nombre;
-        //    ViewBag.apellido = apellido;
-        //    ViewBag.dui = dui;
-        //    ViewBag.direccion = direccion;
-        //    ViewBag.telefono = telefono;
-        //    ViewBag.correo = correo;
-        //    ViewBag.cargo = cargo;
-
-
-        //    //= id;
-
-        //    return View("EmpleadoSave");
-        //}
-
-        [HttpPost]
-        public ActionResult EmpleadoSave(String id)
-        {
-            inventario empleado = new inventario();
-
-            using (EMPLEADOSEntities Empleado = new EMPLEADOSEntities())
-            {
-                
-                int update = Convert.ToInt32(id);
-
-                inventario cargarDatos = Empleado.inventario.Where(x => x.id_empleado == update).FirstOrDefault();
-
-                return View(cargarDatos);
-            }
-
-            
         }
 
     }
